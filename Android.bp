@@ -40,6 +40,26 @@ cc_prebuilt_library_shared {
 	soc_specific: true,
 }
 
+cc_prebuilt_library_shared {
+	name: "libtinycompress",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libtinycompress.so"],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libtinycompress.so"],
+		},
+	},
+	check_elf_files: false,
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
 android_app_import {
 	name: "SoterService",
 	owner: "xiaomi",
